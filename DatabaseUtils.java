@@ -5,9 +5,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DatabaseUtils {
-    private static final String URL = "jdbc:mysql://localhost:3306/student_management_system"; // Your DB URL
-    private static final String USER = "root";  // Your DB username
-    private static final String PASSWORD = "root";  // Your DB password
+    private static final String URL = "jdbc:mysql://localhost:3306/student_management_system"; 
+    private static final String USER = "root";  
+    private static final String PASSWORD = "root";  
 
     // Establish database connection
     public static Connection connect() throws SQLException {
@@ -137,7 +137,7 @@ public class DatabaseUtils {
     }
 
 
-    // Save all student data to the database (you can add this if needed)
+    // Save all student data to the database
     public static void saveData(List<Student> students) {
         String query = "INSERT INTO students (id, name, age, email) VALUES (?, ?, ?, ?)";
         try (Connection connection = connect();
