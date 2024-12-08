@@ -8,7 +8,7 @@ public class StudentManager {
     }
 
     public List<Student> getAllStudents() {
-        return DatabaseUtils.getAllStudents(); // Fetch directly from database
+        return DatabaseUtils.getAllStudents(); 
     }
 
     public Student getStudentById(int id) {
