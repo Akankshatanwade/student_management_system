@@ -14,7 +14,7 @@ public class Main {
             printMenu();
             System.out.print("Choose an option: ");
             int choice = scanner.nextInt();
-            scanner.nextLine(); // Consume newline
+            scanner.nextLine();
 
             switch (choice) {
                 case 1 -> addStudentUI(scanner);
@@ -49,12 +49,12 @@ public class Main {
     private static void addStudentUI(Scanner scanner) {
         System.out.print("Enter Student ID: ");
         int id = scanner.nextInt();
-        scanner.nextLine(); // Consume newline
+        scanner.nextLine(); 
         System.out.print("Enter Name: ");
         String name = scanner.nextLine();
         System.out.print("Enter Age: ");
         int age = scanner.nextInt();
-        scanner.nextLine(); // Consume newline
+        scanner.nextLine(); 
         System.out.print("Enter Email: ");
         String email = scanner.nextLine();
 
@@ -87,7 +87,7 @@ public class Main {
         System.out.println("3. Search by Email");
         System.out.print("Choose an option: ");
         int choice = scanner.nextInt();
-        scanner.nextLine(); // Consume newline
+        scanner.nextLine(); 
 
         switch (choice) {
             case 1 -> {
@@ -105,7 +105,7 @@ public class Main {
                 int minAge = scanner.nextInt();
                 System.out.print("Enter Maximum Age: ");
                 int maxAge = scanner.nextInt();
-                scanner.nextLine(); // Consume newline
+                scanner.nextLine(); 
                 List<Student> studentsByAgeRange = manager.searchByAgeRange(minAge, maxAge);
                 if (studentsByAgeRange.isEmpty()) {
                     System.out.println("No students found in the given age range.");
@@ -134,7 +134,7 @@ public class Main {
         System.out.println("2. Sort by Age");
         System.out.print("Choose an option: ");
         int choice = scanner.nextInt();
-        scanner.nextLine(); // Consume newline
+        scanner.nextLine(); 
 
         switch (choice) {
             case 1 -> manager.sortByName().forEach(Main::printStudent);
@@ -146,14 +146,14 @@ public class Main {
     private static void updateStudentUI(Scanner scanner) {
         System.out.print("Enter Student ID to update: ");
         int id = scanner.nextInt();
-        scanner.nextLine(); // Consume newline
+        scanner.nextLine();
         Student student = manager.getStudentById(id);
         if (student != null) {
             System.out.print("Enter new Name: ");
             String name = scanner.nextLine();
             System.out.print("Enter new Age: ");
             int age = scanner.nextInt();
-            scanner.nextLine(); // Consume newline
+            scanner.nextLine(); 
             System.out.print("Enter new Email: ");
             String email = scanner.nextLine();
 
@@ -170,7 +170,7 @@ public class Main {
     private static void deleteStudentUI(Scanner scanner) {
         System.out.print("Enter Student ID to delete: ");
         int id = scanner.nextInt();
-        scanner.nextLine(); // Consume newline
+        scanner.nextLine();
         if (manager.deleteStudent(id)) {
             System.out.println("Student deleted successfully.");
         } else {
